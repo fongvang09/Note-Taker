@@ -8,4 +8,4 @@
 
 GitHub: https://github.com/fongvang09/Note-Taker
 
-Deployed: 
+Deployed: https://fongvang09.github.io/Note-Taker/
