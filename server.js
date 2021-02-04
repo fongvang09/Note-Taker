@@ -24,13 +24,13 @@ app.post("/api/notes", (req, res) => {
     res.json(notes);
 });
 
-// deleting notes
-app.delete("/api/notes", (req, res) => {
+// deleting notes // not functional at the moment
+app.delete("/api/notes/:id", (req, res) => {
     const notes = JSON.parse(fs.readFileSync("./db/db.json"));
     const deleteNote = notes.filter((delNote) => delNote.id !== req.params.id);
     fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote));
     res.json(deleteNote);
-})
+});
 
 // home page
 app.get("/", function (req, res) {
