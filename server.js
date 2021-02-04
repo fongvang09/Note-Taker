@@ -9,10 +9,6 @@ const PORT = 3003;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
-// app.use(express.static("files"));
-// app.use(express.static("public"));
-// app.use('/static', express.static('public'))
-// app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // adds note to db.json
 app.get("/api/notes", (req, res) => {
@@ -23,11 +19,18 @@ app.get("/api/notes", (req, res) => {
 app.post("/api/notes", (req, res) => {
     const notes = JSON.parse(fs.readFileSync("./db/db.json"));
     const newNote = req.body;
-    newNote.id = uuid.v4();
     notes.push(newNote);
     fs.writeFileSync("./db/db.json", JSON.stringify(notes))
     res.json(notes);
 });
+
+// deleting notes
+app.delete("/api/notes", (req, res) => {
+    const notes = JSON.parse(fs.readFileSync("./db/db.json"));
+    const deleteNote = notes.filter((delNote) => delNote.id !== req.params.id);
+    fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote));
+    res.json(deleteNote);
+})
 
 // home page
 app.get("/", function (req, res) {
