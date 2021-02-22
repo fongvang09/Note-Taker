@@ -13,5 +13,3 @@ A simple note taker app on-the-go. Retrieve notes from your saved list and delet
 GitHub: https://github.com/fongvang09/Note-Taker
 
 Deployed: https://fongvang09.github.io/Note-Taker/
-
-Screencastify: https://drive.google.com/file/d/14r5d9nrpacbg0oiVYeAz5WjHqtqTkuG9/view
