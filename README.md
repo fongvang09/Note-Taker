@@ -12,4 +12,4 @@ A simple note taker app on-the-go. Retrieve notes from your saved list and delet
 
 GitHub: https://github.com/fongvang09/Note-Taker
 
-Deployed: https://fongvang09.github.io/Note-Taker/
+Heroku deployed: https://still-reef-79843.herokuapp.com/
